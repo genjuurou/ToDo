@@ -10,7 +10,9 @@
                 </div>
                 
                 @if ($errors->any())
-                    <x-alert type="danger" message="Email / Password is incorrect" />
+                    <x-alert color="danger">
+                        <p>Email / Password is incorrect</p>
+                    </x-alert>
                 @endif
 
                 <form method="POST" action="{{ route('login') }}">
