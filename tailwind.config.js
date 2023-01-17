@@ -18,5 +18,8 @@ module.exports = {
     'border-rose-500',
     'border-yellow-500',
     'border-green-500',
+    'bg-rose-500',
+    'bg-yellow-500',
+    'bg-green-500',
   ]
 }

@@ -14,7 +14,7 @@ class Index extends Component
     public function mount(Scheduled $scheduled)
     {
         $this->scheduled = $scheduled;
-        $this->todos = Todo::scheduled($scheduled)->get();
+        $this->todos = auth()->user()->todos()->scheduled($scheduled)->get();
     }
 
     public function render()

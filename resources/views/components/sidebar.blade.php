@@ -20,7 +20,7 @@
                         <x-nav.link href="{{ route('todos.index', ['scheduled' => Scheduled::TOMORROW->value]) }}"
                             title="Tomorrow"
                             icon="o-clipboard-document"
-                            :selected="request()->path === Scheduled::TOMORROW->value"
+                            :selected="request()->path() === Scheduled::TOMORROW->value"
                         />
                     </li>
                     <li>
