@@ -1,5 +1,5 @@
 @php
-    use \App\Enums\Schedule;
+    use \App\Enums\Scheduled;
 @endphp
 
 <aside class="hidden lg:block w-64 h-screen pt-6 pb-12 px-4 bg-white">
@@ -10,24 +10,24 @@
             <nav>
                 <ul class="flex flex-col gap-1">
                     <li>
-                        <x-nav.link href="{{ route('todos.index', ['schedule' => Schedule::TODAY->value]) }}"
+                        <x-nav.link href="{{ route('todos.index', ['scheduled' => Scheduled::TODAY->value]) }}"
                             title="Today"
                             icon="o-clipboard"
-                            :selected="request()->path() === Schedule::TODAY->value"
+                            :selected="request()->path() === Scheduled::TODAY->value"
                         />
                     </li>
                     <li>
-                        <x-nav.link href="{{ route('todos.index', ['schedule' => Schedule::TOMORROW->value]) }}"
+                        <x-nav.link href="{{ route('todos.index', ['scheduled' => Scheduled::TOMORROW->value]) }}"
                             title="Tomorrow"
                             icon="o-clipboard-document"
-                            :selected="request()->path === Schedule::TOMORROW->value"
+                            :selected="request()->path === Scheduled::TOMORROW->value"
                         />
                     </li>
                     <li>
-                        <x-nav.link href="{{ route('todos.index', ['schedule' => Schedule::UPCOMING->value]) }}"
+                        <x-nav.link href="{{ route('todos.index', ['scheduled' => Scheduled::UPCOMING->value]) }}"
                             title="Upcoming"
                             icon="o-calendar-days"
-                            :selected="request()->path() === Schedule::UPCOMING->value"
+                            :selected="request()->path() === Scheduled::UPCOMING->value"
                         />
                     </li>
                 </ul>

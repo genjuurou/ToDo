@@ -1,6 +1,6 @@
 <?php
 
-use App\Enums\Schedule;
+use App\Enums\Scheduled;
 use App\Http\Livewire\Todos;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware(['auth'])->group(function () {
-    Route::redirect('/', '/'.Schedule::TODAY->value)->name('home');
+    Route::redirect('/', '/'.Scheduled::TODAY->value)->name('home');
     
-    Route::get('/{schedule}', Todos\Index::class)->name('todos.index');
+    Route::get('/{scheduled}', Todos\Index::class)->name('todos.index');
 });

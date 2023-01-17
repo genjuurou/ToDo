@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum Schedule: string
+enum Scheduled: string
 {
     case TODAY = 'today';
     case TOMORROW = 'tomorrow';

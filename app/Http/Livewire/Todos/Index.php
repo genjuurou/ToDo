@@ -2,16 +2,19 @@
 
 namespace App\Http\Livewire\Todos;
 
-use App\Enums\Schedule;
+use App\Enums\Scheduled;
+use App\Models\Todo;
 use Livewire\Component;
 
 class Index extends Component
 {
-    public $schedule;
+    public $scheduled;
+    public $todos;
 
-    public function mount(Schedule $schedule)
+    public function mount(Scheduled $scheduled)
     {
-        $this->schedule = $schedule;
+        $this->scheduled = $scheduled;
+        $this->todos = Todo::scheduled($scheduled)->get();
     }
 
     public function render()

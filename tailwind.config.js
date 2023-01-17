@@ -14,4 +14,9 @@ module.exports = {
   plugins: [
     require('@tailwindcss/forms'),
   ],
+  safelist: [
+    'border-rose-500',
+    'border-yellow-500',
+    'border-green-500',
+  ]
 }
