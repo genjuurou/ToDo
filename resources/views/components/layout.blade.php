@@ -7,10 +7,13 @@
 
     <title>{{ isset($title) ? "$title | ".config('app.name') : config('app.name') }}</title>
 
+    <livewire:styles />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-gray-200">
     {{ $slot }}
+
+    <livewire:scripts />
 </body>
 </html>
