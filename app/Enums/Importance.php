@@ -2,9 +2,9 @@
 
 namespace App\Enums;
 
-enum Importance
+enum Importance: int
 {
-    case LOW;
-    case MEDIUM;
-    case HIGH;
+    case LOW = 1;
+    case MEDIUM = 2;
+    case HIGH = 3;
 }

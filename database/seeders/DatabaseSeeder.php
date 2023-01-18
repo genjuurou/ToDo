@@ -27,14 +27,14 @@ class DatabaseSeeder extends Seeder
             ->for($user)
             ->count(2)
             ->scheduledToday()
-            ->withDescription()
-            ->create(['importance' => Importance::HIGH]);
+            ->create(['importance' => Importance::MEDIUM]);
 
         Todo::factory()
             ->for($user)
             ->count(2)
             ->scheduledToday()
-            ->create(['importance' => Importance::MEDIUM]);
+            ->withDescription()
+            ->create(['importance' => Importance::HIGH]);
 
         Todo::factory()
             ->for($user)
@@ -57,7 +57,21 @@ class DatabaseSeeder extends Seeder
         Todo::factory()
             ->for($user)
             ->create([
+                'importance' => Importance::MEDIUM,
+                'scheduled_at' => now()->addDays(2)
+            ]);
+
+        Todo::factory()
+            ->for($user)
+            ->create([
                 'importance' => Importance::LOW,
+                'scheduled_at' => now()->addDays(2)
+            ]);
+
+        Todo::factory()
+            ->for($user)
+            ->create([
+                'importance' => Importance::HIGH,
                 'scheduled_at' => now()->addDays(2)
             ]);
         
