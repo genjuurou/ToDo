@@ -7,6 +7,10 @@ use Livewire\Component;
 
 class Index extends Component
 {
+    protected $listeners = [
+        'todo.created' => '$refresh',
+    ];
+
     public $scheduled;
 
     public function mount(Scheduled $scheduled)

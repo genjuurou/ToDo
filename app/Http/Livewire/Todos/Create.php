@@ -62,6 +62,8 @@ class Create extends Component
 
         $this->todo->save();
 
+        $this->emit('todo.created');
+
         $this->close();
     }
 
