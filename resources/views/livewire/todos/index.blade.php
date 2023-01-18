@@ -49,7 +49,7 @@
                             <div class="flex items-center mr-3">
                                 <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->importance->getColor() }}-500" />
                             </div>
-                            <div class="flex-1 {{ $todo->done ? 'line-through' : '' }}">
+                            <div class="flex-1 {{ $todo->done ? 'line-through text-gray-500' : '' }}">
                                 {{ $todo->title }}
                             </div>
                             <div class="flex items-center gap-1 lg:hidden ml-3 lg:group-hover:flex">
