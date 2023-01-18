@@ -2,7 +2,9 @@
     <div class="flex justify-between mb-10">
         <h1 class="text-5xl font-bold">{{ ucfirst($this->scheduled->value) }}</h1>
         
-        <x-button wire:click="openModal('todos.create', { 'scheduled': '{{ $this->scheduled }}' })">Create</x-button>
+        <div class="flex items-end">
+            <x-button wire:click="openModal('todos.create', { 'scheduled': '{{ $this->scheduled }}' })">Create</x-button>
+        </div>
     </div>
     <div>
         @if ($this->todos->isNotEmpty())
