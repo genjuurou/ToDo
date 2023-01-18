@@ -12,6 +12,18 @@
             </x-alert>
         @endif
         <x-input type="text" label="Title" autofocus required wire:model="todo.title" />
+
+        @if ($this->isUpcoming())
+            <x-input
+                x-data
+                x-ref="input"
+                x-init="flatpickr($refs.input, { minDate: '{{ today()->format('Y-m-d') }}' })"
+                type="text"
+                label="Scheduled at"
+                required
+                wire:model="todo.scheduled_at"
+            />
+        @endif
         
         <x-select label="Importance" required wire:model="todo.importance">
             @foreach ($this->options as $value => $name)
