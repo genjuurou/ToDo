@@ -41,6 +41,7 @@
                 </ul>
             @endif
         @else
+            <p class="text-lg text-gray-800 text-center">Your list is empty.</p>
         @endif
     </div>
 </div>
