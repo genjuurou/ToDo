@@ -38,4 +38,9 @@ class Index extends Component
     {
         return $this->scheduled == Scheduled::UPCOMING;
     }
+
+    public function openModal(string $component, $data = [])
+    {
+        $this->emit('modal.open', array_merge(compact('component'), $data));
+    }
 }

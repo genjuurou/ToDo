@@ -11,9 +11,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="bg-gray-200">
+<body class="relative bg-gray-200">
     {{ $slot }}
 
+    <livewire:components.modal />
     <livewire:scripts />
 </body>
 </html>
