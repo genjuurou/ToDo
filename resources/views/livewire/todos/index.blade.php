@@ -15,7 +15,7 @@
                                 @foreach ($todos as $todo)
                                     <li class="flex align-center px-5 py-3 rounded-md font-medium bg-white hover:scale-105 hover:cursor-pointer transition">
                                         <div class="flex items-center mr-3">
-                                            <x-indicator color="{{ $todo->color }}" class="w-2 h-2" />
+                                            <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->color }}-500" />
                                         </div>
                                         <div class="flex-1">
                                             {{ $todo->title }}
@@ -31,7 +31,7 @@
                     @foreach ($this->todos as $todo)
                         <li class="flex align-center px-5 py-3 rounded-md font-medium bg-white hover:scale-105 hover:cursor-pointer transition">
                             <div class="flex items-center mr-3">
-                                <x-indicator color="{{ $todo->color }}" class="w-2 h-2" />
+                                <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->color }}-500" />
                             </div>
                             <div class="flex-1">
                                 {{ $todo->title }}
