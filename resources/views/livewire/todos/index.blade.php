@@ -3,7 +3,10 @@
         <h1 class="text-5xl font-bold">{{ ucfirst($this->scheduled->value) }}</h1>
         
         <div class="flex items-end">
-            <x-button wire:click="openModal('todos.create', { 'scheduled': '{{ $this->scheduled }}' })">Create</x-button>
+            <x-button wire:click="openModal('todos.create', { 'scheduled': '{{ $this->scheduled }}' })">
+                <x-heroicon-o-plus class="h-5 mr-2" />
+                <span>Create</span>
+            </x-button>
         </div>
     </div>
     <div>
