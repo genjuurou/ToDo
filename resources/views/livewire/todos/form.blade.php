@@ -35,8 +35,7 @@
     
     <div class="flex justify-end">
         <x-button class="bg-gray-200" wire:click="submit">
-            <x-heroicon-o-plus class="h-5 mr-2" />
-            <span>Create</span>
+            <span>Save</span>
         </x-button>
     </div>
 </div>

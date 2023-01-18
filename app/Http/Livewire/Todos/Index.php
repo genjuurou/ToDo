@@ -8,7 +8,7 @@ use Livewire\Component;
 class Index extends Component
 {
     protected $listeners = [
-        'todo.created' => '$refresh',
+        'todo.saved' => '$refresh',
     ];
 
     public $scheduled;

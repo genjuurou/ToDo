@@ -8,7 +8,7 @@ use App\Models\Todo;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
 
-class Create extends Component
+class Form extends Component
 {
     public $todo;
     public $scheduled;
@@ -28,16 +28,23 @@ class Create extends Component
         return $rules;
     }
 
-    public function mount($scheduled)
+    public function mount($todo = null, $scheduled = Scheduled::UPCOMING->value)
     {
         $this->scheduled = Scheduled::tryFrom($scheduled);
-        $this->todo = new Todo;
-        $this->todo->importance = 1;
+
+        if (is_null($todo)) {
+            $this->todo = new Todo;
+            $this->todo->importance = 1;
+
+            return;
+        }
+
+        $this->todo = Todo::find($todo);
     }
 
     public function render()
     {
-        return view('livewire.todos.create');
+        return view('livewire.todos.form');
     }
 
     public function getOptionsProperty()
@@ -62,7 +69,7 @@ class Create extends Component
 
         $this->todo->save();
 
-        $this->emit('todo.created');
+        $this->emit('todo.saved');
 
         $this->close();
     }
