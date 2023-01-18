@@ -9,6 +9,8 @@ class Index extends Component
 {
     protected $listeners = [
         'todo.saved' => '$refresh',
+        'todo.done' => '$refresh',
+        'todo.undone' => '$refresh',
     ];
 
     public $scheduled;
@@ -38,13 +40,38 @@ class Index extends Component
         return $todos;
     }
 
-    public function getIsUpcomingProperty()
+    public function isUpcoming()
     {
         return $this->scheduled == Scheduled::UPCOMING;
+    }
+
+    public function isToday()
+    {
+        return $this->scheduled == Scheduled::TODAY;
     }
 
     public function openModal(string $component, $data = [])
     {
         $this->emit('modal.open', array_merge(compact('component'), $data));
+    }
+
+    public function markAsDone($todoId)
+    {
+        auth()->user()
+            ->todos()
+            ->find($todoId)
+            ->update(['done' => true]);
+
+        $this->emit('todo.done');
+    }
+
+    public function markAsUndone($todoId)
+    {
+        auth()->user()
+            ->todos()
+            ->find($todoId)
+            ->update(['done' => false]);
+
+        $this->emit('todo.undone');
     }
 }
