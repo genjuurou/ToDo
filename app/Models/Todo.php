@@ -18,19 +18,6 @@ class Todo extends Model
         'importance' => Importance::class,
     ];
 
-    protected function color(): Attribute
-    {
-        return Attribute::make(
-            get: function () {
-                return match ($this->importance) {
-                    Importance::HIGH => 'rose',
-                    Importance::MEDIUM => 'yellow',
-                    Importance::LOW => 'green',
-                };
-            },
-        );
-    }
-
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);

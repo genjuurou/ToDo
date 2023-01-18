@@ -14,4 +14,22 @@ enum Importance: int
             ->mapWithKeys(fn ($item, $key) => [$item->value => $item->name])
             ->toArray();
     }
+
+    public function getLabel(): string
+    {
+        return match ($this) {
+            self::HIGH => 'High',
+            self::MEDIUM => 'Medium',
+            self::LOW => 'Low',
+        };
+    }
+
+    public function getColor(): string
+    {
+        return match ($this) {
+            self::HIGH => 'rose',
+            self::MEDIUM => 'yellow',
+            self::LOW => 'green',
+        };
+    }
 }

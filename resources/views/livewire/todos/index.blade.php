@@ -20,7 +20,7 @@
                                 @foreach ($todos as $todo)
                                     <li class="group flex align-center px-5 py-3 rounded-md font-medium bg-white hover:scale-105 transition">
                                         <div class="flex items-center mr-3">
-                                            <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->color }}-500" />
+                                            <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->importance->getColor() }}-500" />
                                         </div>
                                         <div class="flex-1">
                                             {{ $todo->title }}
@@ -29,7 +29,7 @@
                                             <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                                 <x-heroicon-o-check class="w-5 h-5 " />
                                             </div>
-                                            <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
+                                            <div wire:click="openModal('todos.form', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                                 <x-heroicon-o-eye class="w-5 h-5 " />
                                             </div>
                                             <div wire:click="openModal('todos.form', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
@@ -50,7 +50,7 @@
                     @foreach ($this->todos as $todo)
                         <li class="group flex align-center px-5 py-3 rounded-md font-medium bg-white hover:scale-105 transition">
                             <div class="flex items-center mr-3">
-                                <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->color }}-500" />
+                                <x-heroicon-s-stop class="w-3 h-3 text-{{ $todo->importance->getColor() }}-500" />
                             </div>
                             <div class="flex-1">
                                 {{ $todo->title }}
@@ -59,7 +59,7 @@
                                 <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                     <x-heroicon-o-check class="w-5 h-5 " />
                                 </div>
-                                <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
+                                <div wire:click="openModal('todos.show', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                     <x-heroicon-o-eye class="w-5 h-5 " />
                                 </div>
                                 <div wire:click="openModal('todos.form', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
