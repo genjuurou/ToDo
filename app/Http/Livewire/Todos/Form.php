@@ -39,7 +39,7 @@ class Form extends Component
             return;
         }
 
-        $this->todo = Todo::find($todo);
+        $this->todo = auth()->user()->todos()->find($todo);
     }
 
     public function render()

@@ -32,7 +32,7 @@
                                             <div wire:click="openModal('todos.form', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                                 <x-heroicon-o-pencil-square class="w-5 h-5 " />
                                             </div>
-                                            <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
+                                            <div wire:click="openModal('todos.delete', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                                 <x-heroicon-o-trash class="w-5 h-5 " />
                                             </div>
                                         </div>
@@ -70,7 +70,7 @@
                                 <div wire:click="openModal('todos.form', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                     <x-heroicon-o-pencil-square class="w-5 h-5 " />
                                 </div>
-                                <div class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
+                                <div wire:click="openModal('todos.delete', { 'todo': '{{ $todo->id }}' })" class="flex items-center justify-center text-gray-500 rounded-md transition h-6 w-6 hover:bg-indigo-600 hover:text-white">
                                     <x-heroicon-o-trash class="w-5 h-5 " />
                                 </div>
                             </div>

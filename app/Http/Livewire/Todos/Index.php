@@ -11,6 +11,7 @@ class Index extends Component
         'todo.saved' => '$refresh',
         'todo.done' => '$refresh',
         'todo.undone' => '$refresh',
+        'todo.deleted' => '$refresh',
     ];
 
     public $scheduled;

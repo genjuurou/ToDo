@@ -17,7 +17,7 @@
             <x-input
                 x-data="{}"
                 x-ref="input"
-                x-init="flatpickr($refs.input, { minDate: '{{ today()->format('Y-m-d') }}' })"
+                x-init="flatpickr($refs.input, { minDate: '{{ today()->format('Y-m-d') }}', appendTo: $refs.modal })"
                 type="text"
                 label="Scheduled at"
                 wire:model="todo.scheduled_at"

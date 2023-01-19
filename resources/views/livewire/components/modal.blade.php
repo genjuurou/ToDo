@@ -4,7 +4,7 @@
     x-show="open"
     class="fixed inset-0 z-30 bg-black bg-opacity-50 flex items-center justify-center"
 >
-    <div @click.outside="$wire.close()" class="w-full max-w-xl px-6 py-4 m-4 overflow-hidden rounded-lg bg-white" role="dialog">
+    <div x-ref="modal" @click.outside="$wire.close()" class="w-full max-w-xl px-6 py-4 m-4 overflow-hidden rounded-lg bg-white" role="dialog">
         @if ($component)    
             <header class="mb-4 flex justify-end">
                 <button wire:click="close()" class="text-gray-400 hover:text-black">
