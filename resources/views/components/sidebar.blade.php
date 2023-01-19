@@ -2,10 +2,10 @@
     use \App\Enums\Scheduled;
 @endphp
 
-<aside class="hidden lg:block w-64 h-screen pt-6 pb-12 px-4 bg-white">
+<aside class="px-1 md:px-2 lg:block lg:w-64 h-screen pt-6 pb-8 lg:px-4 bg-white">
     <div class="h-full flex flex-col justify-between">
         <div>
-            <x-logo class="text-5xl px-5 mb-10" />
+            <x-logo class="hidden lg:block text-5xl px-5 mb-10" />
             
             <nav>
                 <ul class="flex flex-col gap-1">
