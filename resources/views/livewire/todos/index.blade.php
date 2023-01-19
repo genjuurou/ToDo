@@ -3,7 +3,7 @@
         <h1 class="text-5xl font-bold">{{ ucfirst($this->scheduled->value) }}</h1>
         
         <div class="flex justify-center sm:justify-start sm:items-end">
-            <x-button wire:click="openModal('todos.form', { 'todo': 'none', 'scheduled': '{{ $this->scheduled }}' })">
+            <x-button wire:click="openModal('todos.form', { 'todo': null, 'scheduled': '{{ $this->scheduled->value }}' })">
                 <x-heroicon-o-plus class="h-5 md:mr-2" />
                 <span class="hidden md:inline">Create</span>
             </x-button>
